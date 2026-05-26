@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agri Equipments – Coming Soon | Balaji Hitech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ══ Reset ══ */
+    *, *::before, *::after { box-sizing: border-box; }
+    a { color: inherit; text-decoration: none; }
+    body { margin: 0; background: #f2f5f9; font-family: 'DM Sans','Inter',sans-serif; min-height: 100vh; }
+
+    /* ══ Tokens ══ */
+    :root {
+      --bh__bg: #f8fafd; --bh__text: #0f172a; --bh__muted: #0d3b7a;
+      --bh__surface: #fff; --bh__primary: #2f7bff; --bh__primary-hover: #1f67f0;
+      --bh__border: #e1e9f5; --bh__shadow: 0 12px 25px rgba(40,72,130,.12); --bh__radius: 18px;
+      --bh__footer-bg-1: #021224; --bh__footer-line: rgba(126,176,216,.22);
+      --bh__footer-text: #ebecf0; --bh__footer-muted: #ebecf0; --bh__footer-accent: #ebecf0;
+      --bh__footer-social: #e8b84b; --bh__footer-container: 1520px;
+      --ag-green: #16a34a; --ag-green-dark: #0f7a37; --ag-green-bg: rgba(22,163,74,.08); --ag-gold: #e8b84b;
+    }
+
+    /* ══════════ HEADER ══════════ */
+    .bh__site-header { position:sticky; top:0; z-index:120; background:linear-gradient(90deg,rgba(255,255,255,.97),rgba(248,250,255,.97)); border-bottom:1px solid var(--bh__border); backdrop-filter:blur(12px); overflow:visible; }
+    .bh__header-container { width:100%; max-width:1520px; margin:0 auto; padding:.75rem 2.5rem; display:flex; align-items:center; justify-content:space-between; gap:2rem; }
+    .bh__brand-wrap { display:flex; align-items:center; gap:10px; flex-shrink:0; }
+    .bh__brand-logo { height:42px; width:auto; display:block; opacity:0; transform:translateX(-28px) scale(.88); transition:opacity .55s cubic-bezier(.22,.68,0,1.2),transform .55s cubic-bezier(.22,.68,0,1.2); }
+    .bh__brand-logo.bh__logo-in { opacity:1; transform:translateX(0) scale(1); }
+    .bh__brand-name { font-family:'Inter',sans-serif; font-weight:900; font-size:clamp(.95rem,2vw,1.2rem); letter-spacing:.02em; color:#1a3c8f; line-height:1.1; display:inline-block; }
+    .bh__brand-name span { opacity:0; transform:translateY(12px); display:inline-block; transition:opacity .5s ease,transform .5s ease; }
+    .bh__brand-name.bh__name-in span { opacity:1; transform:translateY(0); }
+    .bh__site-nav { display:flex; align-items:center; gap:2.2rem; font-family:'Inter',sans-serif; flex:1; justify-content:center; }
+    .bh__site-nav > a { position:relative; font-weight:500; font-size:1.02rem; color:var(--bh__muted); padding-bottom:3px; transition:color .23s; }
+    .bh__site-nav > a::after { content:''; position:absolute; left:0; bottom:0; width:0; height:2px; background:#e11d48; transition:width .28s ease; }
+    .bh__site-nav > a:hover { color:#db2777; }
+    .bh__site-nav > a:hover::after { width:100%; }
+    .bh__nav-dropdown { position:relative; display:flex; align-items:center; }
+    .bh__dropdown-btn { color:var(--bh__muted); background:none; border:none; font:inherit; font-size:1.02rem; font-weight:500; cursor:pointer; padding:.2rem 0; transition:color .24s; }
+    .bh__dropdown-btn::after { content:'▾'; font-size:.72rem; margin-left:.25rem; color:#e11d48; display:inline-block; transition:transform .24s ease; }
+    .bh__nav-dropdown.bh__open .bh__dropdown-btn,.bh__nav-dropdown:hover .bh__dropdown-btn { color:#db2777; }
+    .bh__nav-dropdown.bh__open .bh__dropdown-btn::after { transform:rotate(180deg); }
+    .bh__dropdown-menu { position:absolute; top:calc(100% + .85rem); left:50%; transform:translateX(-50%) translateY(-8px); background:#fff; border:1px solid rgba(47,123,255,.15); border-radius:14px; box-shadow:0 20px 48px rgba(0,0,0,.14); list-style:none; padding:.6rem .5rem; margin:0; min-width:250px; opacity:0; visibility:hidden; pointer-events:none; z-index:9999; transition:opacity .22s,transform .22s,visibility .22s; }
+    .bh__dropdown-menu::before { content:''; position:absolute; top:-6px; left:50%; width:12px; height:12px; background:#fff; border-left:1px solid rgba(47,123,255,.15); border-top:1px solid rgba(47,123,255,.15); border-radius:2px 0 0 0; transform:translateX(-50%) rotate(45deg); }
+    .bh__nav-dropdown.bh__open .bh__dropdown-menu,.bh__nav-dropdown:hover .bh__dropdown-menu { opacity:1; visibility:visible; pointer-events:auto; transform:translateX(-50%) translateY(0); }
+    .bh__dropdown-menu li a { display:block; position:relative; padding:.72rem 1.1rem; font-size:.97rem; color:#334155; font-weight:500; border-radius:8px; transition:color .2s; }
+    .bh__dropdown-menu li a::after { content:''; position:absolute; bottom:6px; left:1.1rem; width:0; height:2px; background:#e11d48; border-radius:999px; transition:width .28s; }
+    .bh__dropdown-menu li a:hover { color:#e11d48; background:#fff5f7; }
+    .bh__dropdown-menu li a:hover::after { width:calc(100% - 2.2rem); }
+    .bh__header-cta { display:inline-flex; padding:.6rem 1.1rem; border-radius:999px; border:none; font:600 .9rem 'Inter',sans-serif; cursor:pointer; color:#fff; background:var(--bh__primary); transition:background .2s; white-space:nowrap; }
+    .bh__header-cta:hover { background:var(--bh__primary-hover); }
+    .bh__mobile-menu-btn { display:none; border:0; background:transparent; cursor:pointer; width:2rem; height:1.5rem; flex-direction:column; align-items:center; justify-content:space-between; padding:0; }
+    .bh__mobile-menu-btn span { display:block; height:3px; border-radius:999px; width:100%; background:var(--bh__text); }
+    .bh__mobile-nav { display:flex; flex-direction:column; background:var(--bh__surface); border-top:1px solid var(--bh__border); font-family:'Inter',sans-serif; max-height:calc(100vh - 70px); overflow-y:auto; }
+    .bh__mobile-nav > a,.bh__mobile-nav-item > .bh__mobile-nav-parent { padding:.9rem 1.5rem; border-bottom:1px solid var(--bh__border); color:var(--bh__text); font-weight:600; font-size:.95rem; display:flex; align-items:center; justify-content:space-between; cursor:pointer; }
+    .bh__mobile-nav > a:hover { color:var(--bh__primary); background:#f5f8ff; }
+    .bh__mobile-nav-item { border-bottom:1px solid var(--bh__border); }
+    .bh__mobile-nav-item > .bh__mobile-nav-parent { border-bottom:none; background:none; border:none; width:100%; text-align:left; font:600 .95rem 'Inter',sans-serif; }
+    .bh__mobile-nav-chevron { display:inline-block; transition:transform .25s ease; font-size:.75rem; color:var(--bh__muted); }
+    .bh__mobile-nav-item.bh__open .bh__mobile-nav-chevron { transform:rotate(180deg); }
+    .bh__mobile-submenu { padding:0; background:#f8faff; max-height:0; overflow:hidden; transition:max-height .3s ease; }
+    .bh__mobile-nav-item.bh__open .bh__mobile-submenu { max-height:600px; }
+    .bh__mobile-submenu a { display:block; padding:.65rem 1.5rem .65rem 2.2rem; font-size:.88rem; color:#4b5e82; font-weight:500; border-bottom:1px solid #e8eef8; }
+    .bh__mobile-submenu a:last-child { border-bottom:none; }
+    .bh__mobile-submenu a:hover { color:var(--bh__primary); background:#edf2ff; }
+    .bh__hidden { display:none !important; }
+    .bh__mobile-nav-cta { padding:1rem 1.5rem; }
+    .bh__mobile-nav-cta .bh__header-cta { display:inline-flex; width:100%; justify-content:center; padding:.75rem 1.5rem; font-size:1rem; }
+
+    /* ══════════════════════════════════════════
+       COMING SOON BODY
+    ══════════════════════════════════════════ */
+    .cs-page {
+      min-height: calc(100vh - 72px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      background: linear-gradient(135deg, #0a1628 0%, #061d0e 45%, #0a1628 100%);
+    }
+
+    /* Animated grid background */
+    .cs-page::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(22,163,74,.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(22,163,74,.07) 1px, transparent 1px);
+      background-size: 56px 56px;
+      animation: cs-grid-drift 20s linear infinite;
+    }
+    @keyframes cs-grid-drift {
+      from { background-position: 0 0; }
+      to   { background-position: 56px 56px; }
+    }
+
+    /* Radial glows */
+    .cs-page::after {
+      content: '';
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 55% 55% at 20% 40%, rgba(22,163,74,.22) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 50% at 80% 60%, rgba(47,123,255,.14) 0%, transparent 65%),
+        radial-gradient(ellipse 30% 40% at 55% 90%, rgba(232,184,75,.10) 0%, transparent 60%);
+    }
+
+    /* Floating particles */
+    .cs-particle {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: cs-float linear infinite;
+      z-index: 0;
+    }
+    @keyframes cs-float {
+      0%   { transform: translateY(0) rotate(0deg); opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+    }
+
+    /* Orbiting rings */
+    .cs-orbit {
+      position: absolute;
+      left: 50%; top: 50%;
+      border-radius: 50%;
+      border: 1px solid rgba(22,163,74,.18);
+      transform: translate(-50%, -50%);
+      animation: cs-orbit-spin linear infinite;
+      z-index: 0;
+    }
+    .cs-orbit:nth-child(1) { width: 380px; height: 380px; animation-duration: 28s; border-color: rgba(22,163,74,.14); }
+    .cs-orbit:nth-child(2) { width: 560px; height: 560px; animation-duration: 42s; animation-direction: reverse; border-color: rgba(232,184,75,.10); }
+    .cs-orbit:nth-child(3) { width: 740px; height: 740px; animation-duration: 60s; border-color: rgba(47,123,255,.08); }
+    .cs-orbit::before {
+      content: '';
+      position: absolute;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: rgba(232,184,75,.7);
+      top: 50%; left: 0;
+      transform: translateY(-50%);
+      box-shadow: 0 0 10px rgba(232,184,75,.6);
+    }
+    @keyframes cs-orbit-spin {
+      from { transform: translate(-50%,-50%) rotate(0deg); }
+      to   { transform: translate(-50%,-50%) rotate(360deg); }
+    }
+
+    /* Inner content */
+    .cs-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: clamp(40px,6vw,80px) clamp(24px,5vw,60px);
+      max-width: 720px;
+    }
+
+    /* Eyebrow badge */
+    .cs-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: rgba(22,163,74,.18);
+      border: 1px solid rgba(22,163,74,.38);
+      border-radius: 999px;
+      padding: 6px 18px;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #6ee7a0;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: cs-fade-up .7s cubic-bezier(.25,.46,.45,.94) .3s forwards;
+    }
+    .cs-badge-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: cs-blink 1.6s ease infinite;
+    }
+    @keyframes cs-blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(1.5)} }
+
+    /* Big COMING SOON text */
+    .cs-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(64px, 14vw, 148px);
+      line-height: .9;
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(255,255,255,.85);
+      letter-spacing: .06em;
+      margin: 0 0 .5rem;
+      position: relative;
+    }
+    /* Each word animates in from below */
+    .cs-title .cs-word {
+      display: block;
+      overflow: hidden;
+    }
+    .cs-title .cs-word span {
+      display: block;
+      transform: translateY(110%);
+      animation: cs-word-in .85s cubic-bezier(.22,.68,0,1.2) forwards;
+    }
+    .cs-title .cs-word:nth-child(1) span { animation-delay: .5s; }
+    .cs-title .cs-word:nth-child(2) span { animation-delay: .72s; }
+
+    @keyframes cs-word-in {
+      to { transform: translateY(0); }
+    }
+
+    /* Shimmering text fill */
+    .cs-title-fill {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(64px, 14vw, 148px);
+      line-height: .9;
+      letter-spacing: .06em;
+      background: linear-gradient(90deg, #22c55e 0%, #a3e635 30%, #e8b84b 60%, #22c55e 100%);
+      background-size: 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: cs-shimmer 4s linear infinite;
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      clip-path: inset(0 100% 0 0);
+      animation: cs-shimmer 4s linear infinite, cs-reveal-fill 1s cubic-bezier(.25,.46,.45,.94) 1.4s forwards;
+    }
+    @keyframes cs-shimmer {
+      0%   { background-position: 300% center; }
+      100% { background-position: -300% center; }
+    }
+    @keyframes cs-reveal-fill {
+      from { clip-path: inset(0 100% 0 0); }
+      to   { clip-path: inset(0 0% 0 0); }
+    }
+
+    .cs-title-wrap {
+      position: relative;
+      display: inline-block;
+      margin: 0 auto 1.2rem;
+    }
+
+    /* Subtitle */
+    .cs-sub {
+      font-size: clamp(1rem,1.6vw,1.18rem);
+      color: rgba(255,255,255,.6);
+      line-height: 1.75;
+      max-width: 520px;
+      margin: 0 auto 2.4rem;
+      opacity: 0;
+      animation: cs-fade-up .7s ease 1.6s forwards;
+    }
+    @keyframes cs-fade-up {
+      from { opacity:0; transform:translateY(22px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* Animated countdown dots */
+    .cs-dots {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 2.8rem;
+      opacity: 0;
+      animation: cs-fade-up .6s ease 1.9s forwards;
+    }
+    .cs-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: rgba(22,163,74,.5);
+      animation: cs-dot-pulse 1.8s ease infinite;
+    }
+    .cs-dot:nth-child(1) { animation-delay: 0s;    background: #22c55e; }
+    .cs-dot:nth-child(2) { animation-delay: .2s;   background: #86efac; }
+    .cs-dot:nth-child(3) { animation-delay: .4s;   background: #a3e635; }
+    .cs-dot:nth-child(4) { animation-delay: .6s;   background: #e8b84b; }
+    .cs-dot:nth-child(5) { animation-delay: .8s;   background: #fde68a; }
+    @keyframes cs-dot-pulse {
+      0%,100% { transform: scale(1); opacity:.5; }
+      50%      { transform: scale(1.7); opacity:1; }
+    }
+
+    /* Notify / CTA buttons */
+    .cs-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: cs-fade-up .7s ease 2.1s forwards;
+    }
+    .cs-btn-primary {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: .85rem 2rem; border-radius: 999px;
+      background: var(--ag-green); color: #fff;
+      font: 700 1rem 'DM Sans', sans-serif;
+      border: none; cursor: pointer;
+      box-shadow: 0 8px 28px rgba(22,163,74,.38);
+      transition: background .22s, transform .22s, box-shadow .22s;
+    }
+    .cs-btn-primary:hover { background: var(--ag-green-dark); transform: translateY(-2px); box-shadow: 0 14px 36px rgba(22,163,74,.5); }
+    .cs-btn-secondary {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: .85rem 2rem; border-radius: 999px;
+      background: rgba(255,255,255,.08); color: #fff;
+      font: 600 1rem 'DM Sans', sans-serif;
+      border: 1.5px solid rgba(255,255,255,.22); cursor: pointer;
+      transition: background .22s, border-color .22s;
+    }
+    .cs-btn-secondary:hover { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.5); }
+
+    /* Agri icon decoration */
+    .cs-icon-ring {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      background: rgba(22,163,74,.12);
+      border: 1.5px solid rgba(22,163,74,.3);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.8rem;
+      opacity: 0;
+      animation: cs-fade-up .65s ease .15s forwards;
+      position: relative;
+    }
+    .cs-icon-ring::before {
+      content: '';
+      position: absolute; inset: -8px;
+      border-radius: 50%;
+      border: 1px dashed rgba(22,163,74,.25);
+      animation: cs-orbit-spin 12s linear infinite;
+    }
+    .cs-icon-ring svg {
+      width: 40px; height: 40px;
+      stroke: #22c55e; fill: none;
+      stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+      animation: cs-icon-breathe 3s ease infinite;
+    }
+    @keyframes cs-icon-breathe {
+      0%,100% { transform: scale(1); filter: drop-shadow(0 0 4px rgba(34,197,94,.4)); }
+      50%      { transform: scale(1.1); filter: drop-shadow(0 0 12px rgba(34,197,94,.8)); }
+    }
+
+    /* Horizontal divider line with sweep */
+    .cs-divider {
+      width: 120px; height: 2px;
+      background: linear-gradient(90deg, transparent, #22c55e, transparent);
+      border-radius: 999px;
+      margin: 0 auto 2rem;
+      opacity: 0;
+      animation: cs-fade-up .5s ease 1.2s forwards;
+    }
+
+    /* ══════════ FOOTER ══════════ */
+    .bh__footer-shell,.bh__footer-shell * { box-sizing:border-box; }
+    .bh__footer-shell { max-width:var(--bh__footer-container); margin:0 auto; font-family:'Manrope','Inter',sans-serif; color:var(--bh__footer-text); border:1px solid rgba(64,117,159,.25); border-radius:20px; overflow:hidden; background:#021224; box-shadow:0 24px 60px rgba(0,0,0,.45); }
+    .bh__footer-wrap { padding:24px clamp(16px,2.6vw,38px) 16px; }
+    .bh__footer-top { display:grid; grid-template-columns:190px 1fr 190px; align-items:center; gap:14px; padding-bottom:18px; border-bottom:1px solid var(--bh__footer-line); }
+    .bh__footer-brand { display:flex; align-items:center; gap:10px; }
+    .bh__footer-brand-logo { height:48px; width:auto; display:block; opacity:0; transform:translateX(-18px); transition:opacity .55s ease,transform .55s ease; }
+    .bh__footer-brand-logo.bh__fb-in { opacity:1; transform:translateX(0); }
+    .bh__footer-brand-name { font-family:'Inter',sans-serif; font-size:.88rem; font-weight:700; color:#c8e4ff; line-height:1.2; white-space:nowrap; opacity:0; transform:translateX(-12px); transition:opacity .55s ease .15s,transform .55s ease .15s; }
+    .bh__footer-brand-name.bh__fb-in { opacity:1; transform:translateX(0); }
+    .bh__footer-shell .bh__socials { display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; opacity:0; transform:translateY(30px); transition:opacity .8s,transform .8s; }
+    .bh__footer-shell.bh__animate-footer .bh__socials { opacity:1; transform:translateY(0); }
+    .bh__footer-shell .bh__social-btn { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,.1); border:1.5px solid rgba(232,184,75,.45); color:var(--bh__footer-social); text-decoration:none; box-shadow:0 8px 24px rgba(0,0,0,.4); position:relative; overflow:hidden; transition:transform .35s cubic-bezier(.22,.68,0,1.25),background .35s,border-color .35s,box-shadow .35s; }
+    .bh__footer-shell .bh__social-btn svg { width:22px; height:22px; }
+    .bh__footer-shell .bh__social-btn:hover { transform:translateY(-4px) scale(1.08); background:rgba(2,18,36,.95); border-color:var(--bh__footer-social); box-shadow:0 16px 40px rgba(200,146,42,.3),0 0 20px rgba(232,184,75,.4); }
+    .bh__footer-top-spacer { width:190px; }
+    .bh__footer-nav { display:grid; grid-template-columns:1.25fr 1.35fr 1fr 1fr 1.15fr; gap:clamp(16px,2vw,34px); padding:24px 0 20px; border-bottom:1px solid var(--bh__footer-line); align-items:start; }
+    .bh__footer-col .bh__heading-link { margin:0 0 12px; font-size:1.177rem; line-height:1.2; color:#f6fbff; font-weight:800; text-decoration:none; display:inline-block; position:relative; }
+    .bh__footer-col .bh__heading-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#e11d48; border-radius:999px; transition:width .28s cubic-bezier(.4,0,.2,1); }
+    .bh__footer-col .bh__heading-link:hover::after { width:100%; }
+    .bh__footer-heading-animate span { opacity:0; transform:translateY(10px); display:inline-block; transition:opacity .55s ease,transform .55s ease; }
+    .bh__footer-heading-animate.bh__fh-in span { opacity:1; transform:translateY(0); }
+    .bh__footer-col ul { list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+    .bh__stack-links { display:grid; gap:12px; align-content:start; }
+    .bh__stack-links .bh__heading-link { margin:0; }
+    .bh__placeholder-lines { display:grid; gap:6px; margin:0 0 8px; }
+    .bh__placeholder-lines span { display:block; width:100%; max-width:150px; height:8px; border-radius:999px; background:linear-gradient(90deg,rgba(78,138,183,.45),rgba(78,138,183,.14)); }
+    .bh__contact-list { display:grid; gap:10px; }
+    .bh__contact-row { display:grid; grid-template-columns:18px 1fr; gap:10px; align-items:start; }
+    .bh__contact-row svg { color:var(--bh__footer-accent); margin-top:2px; }
+    .bh__map-link { color:inherit; text-decoration:none; transition:color .2s; }
+    .bh__map-link:hover { color:#ecf7ff; }
+    .bh__map-icon-red { color:#e53e3e !important; flex-shrink:0; }
+    .bh__footer-bottom { padding-top:14px; color:#ebecf0; font-size:.92rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.5rem; }
+    .bh__footer-bottom strong { color:#ebecf0; }
+    .bh__footer-col a,.bh__footer-col p { margin:0; color:var(--bh__footer-muted); text-decoration:none; font-size:.92rem; line-height:1.45; font-weight:500; position:relative; display:inline-block; }
+    .bh__footer-col ul a,.bh__footer-col .bh__heading-link { display:inline-block; }
+    .bh__footer-col ul a::after,.bh__footer-col.bh__stack-links > a::after { content:''; position:absolute; bottom:-1px; left:0; width:0; height:2px; background:#e11d48; border-radius:999px; transition:width .28s; }
+    .bh__footer-col ul a:hover::after,.bh__footer-col.bh__stack-links > a:hover::after { width:100%; }
+    .bh__footer-col a:hover,.bh__footer-col .bh__heading-link:hover { color:#ecf7ff; }
+    .bh__footer-copyright { opacity:0; transform:translateY(14px); transition:opacity .6s ease,transform .6s ease; }
+    .bh__footer-copyright.bh__cb-in { opacity:1; transform:translateY(0); }
+    .bh__built-by { display:flex; align-items:center; gap:5px; font-size:.72rem; color:#4a6278; letter-spacing:.02em; opacity:0; transform:translateY(10px); transition:opacity .6s ease .15s,transform .6s ease .15s; }
+    .bh__built-by.bh__cb-in { opacity:1; transform:translateY(0); }
+    .bh__built-by-link { display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:4px; background:rgba(74,98,120,.35); color:#7baac8; font-size:.68rem; font-weight:700; text-decoration:none; transition:background .2s,color .2s; }
+    .bh__built-by-link:hover { background:#0a66c2; color:#fff; }
+
+    /* ══ Floating vnav ══ */
+    .bh__vnav { position:fixed; right:18px; top:50%; transform:translateY(-50%); z-index:990; display:flex; flex-direction:column; align-items:center; gap:10px; }
+    @media (max-width:1024px) { .bh__vnav { display:none; } }
+    .bh__vnav-item { position:relative; display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:50%; background:rgba(3,26,49,.82); border:1px solid rgba(126,176,216,.22); backdrop-filter:blur(10px); color:#fff; text-decoration:none; transition:background .25s,border-color .25s,transform .25s cubic-bezier(.22,.68,0,1.4),box-shadow .25s; }
+    .bh__vnav-item:hover { background:var(--bh__primary); border-color:rgba(47,123,255,.6); transform:scale(1.15); box-shadow:0 0 0 4px rgba(47,123,255,.18),0 8px 20px rgba(47,123,255,.28); }
+    .bh__vnav-item.active-page { background:rgba(22,163,74,.55); border-color:rgba(22,163,74,.7); }
+    .bh__vnav-item svg { width:20px; height:20px; flex-shrink:0; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+    .bh__vnav-item::after { content:attr(data-label); position:absolute; right:calc(100% + 10px); top:50%; transform:translateY(-50%) translateX(6px); background:rgba(3,26,49,.95); color:var(--bh__footer-text); font-family:'Inter',sans-serif; font-size:11.5px; font-weight:600; letter-spacing:.03em; white-space:nowrap; padding:5px 11px; border-radius:7px; border:1px solid rgba(126,176,216,.18); pointer-events:none; opacity:0; transition:opacity .2s,transform .2s; }
+    .bh__vnav-item:hover::after { opacity:1; transform:translateY(-50%) translateX(0); }
+    .bh__vnav-divider { width:1px; height:8px; background:rgba(126,176,216,.2); border-radius:1px; }
+
+    /* ══ Modal & floating CTA ══ */
+    .bh__floating-quote-btn { position:fixed; right:16px; bottom:28px; z-index:500; display:inline-flex; align-items:center; justify-content:center; padding:.8rem 1.2rem; border-radius:999px; background:var(--bh__primary); color:#fff; font:700 .9rem 'Inter',sans-serif; border:none; box-shadow:0 12px 24px rgba(47,123,255,.3); text-decoration:none; cursor:pointer; transition:background .2s,transform .2s; }
+    .bh__floating-quote-btn:hover { background:var(--bh__primary-hover); transform:translateY(-2px); }
+    .bh__modal-overlay { position:fixed; inset:0; background:rgba(15,23,42,.8); backdrop-filter:blur(8px); display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transition:all .3s cubic-bezier(.25,.46,.45,.94); z-index:1000; }
+    .bh__modal-overlay.bh__open { opacity:1; visibility:visible; }
+    .bh__modal-container { background:var(--bh__surface); border-radius:var(--bh__radius); box-shadow:var(--bh__shadow),0 0 0 1px var(--bh__border); max-width:min(500px,90vw); max-height:90vh; overflow-y:auto; transform:translateY(-20px) scale(.95); transition:transform .3s cubic-bezier(.25,.46,.45,.94); width:100%; }
+    .bh__modal-overlay.bh__open .bh__modal-container { transform:translateY(0) scale(1); }
+    .bh__modal-header { display:flex; align-items:center; justify-content:space-between; padding:1.5rem 1.5rem 1rem; border-bottom:1px solid var(--bh__border); }
+    .bh__modal-header h2 { margin:0; font-size:1.4rem; font-weight:700; font-family:'Inter',sans-serif; }
+    .bh__modal-close { background:none; border:none; font-size:1.75rem; cursor:pointer; color:var(--bh__muted); padding:.25rem; border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; transition:background .2s,color .2s; }
+    .bh__modal-close:hover { background:var(--bh__border); color:var(--bh__text); }
+    #bh__quote-form { padding:1.5rem; font-family:'Inter',sans-serif; }
+    .bh__form-group { margin-bottom:1.2rem; }
+    .bh__form-group label { display:block; margin-bottom:.4rem; font-weight:500; font-size:.9rem; color:var(--bh__text); }
+    .bh__form-group input,.bh__form-group textarea { width:100%; padding:.875rem 1rem; border:1px solid var(--bh__border); border-radius:10px; font-size:1rem; font-family:inherit; background:var(--bh__bg); color:var(--bh__text); transition:border-color .2s,box-shadow .2s; }
+    .bh__form-group input:focus,.bh__form-group textarea:focus { outline:none; border-color:var(--bh__primary); box-shadow:0 0 0 3px rgba(47,123,255,.1); }
+    #bh__requirement { resize:vertical; min-height:100px; }
+    .bh__btn-primary { display:inline-flex; padding:.75rem 1.5rem; border-radius:999px; border:none; font:600 1rem 'Inter',sans-serif; cursor:pointer; color:#fff; background:var(--bh__primary); transition:background .2s; width:100%; justify-content:center; }
+    .bh__btn-primary:hover { background:var(--bh__primary-hover); }
+    .bh__btn-primary:disabled { cursor:wait; opacity:.72; }
+    .bh__form-status { min-height:1.25rem; margin:0 1.5rem 1.2rem; font:600 .88rem 'Inter',sans-serif; color:#b91c1c; }
+    .bh__form-status.bh__ok { color:#166534; }
+    .bh__quote-success-message { display:none; text-align:center; padding:2rem; font-family:'Inter',sans-serif; }
+    .bh__quote-success-message.bh__visible { display:block; }
+    .bh__success-check { font-size:3rem; color:#166534; margin-bottom:.5rem; }
+
+    /* ══ Responsive ══ */
+    @media (max-width:1180px) { .bh__footer-nav { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+    @media (max-width:992px) { .bh__site-nav { display:none; } .bh__mobile-menu-btn { display:flex; } }
+    @media (max-width:860px) { .bh__footer-nav { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (max-width:640px) { .bh__footer-top { grid-template-columns:1fr; justify-items:start; } .bh__footer-nav { grid-template-columns:1fr; } }
+    @media (max-width:480px) { .bh__header-container { padding:.65rem 1rem; } .bh__header-cta { display:none; } .bh__mobile-menu-btn { display:flex; } }
+  </style>
+  <script src="auto-scale.js"></script>
+</head>
+
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="bh__site-header">
+  <div class="bh__header-container">
+    <a class="bh__brand-wrap" href="./index.html" aria-label="Balaji Hitech Pvt. Ltd.">
+      <img class="bh__brand-logo" id="bh__brand-logo" src="images/b-logo.png" alt="Balaji Hitech logo" width="42" height="42" />
+    </a>
+    <nav id="bh__site-nav" class="bh__site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <div class="bh__nav-dropdown">
+        <a class="bh__dropdown-btn" href="about.html" aria-haspopup="true">About Us</a>
+        <ul class="bh__dropdown-menu">
+          <li><a href="about.html#about-why-balaji">Why Balaji</a></li>
+          <li><a href="about.html#about-philosophy">Corporate Philosophy</a></li>
+          <li><a href="about.html#core-principals">Core Values</a></li>
+          <li><a href="about.html#about-management">Management Team</a></li>
+          <li><a href="about.html#about-infrastructure">Infrastructure</a></li>
+          <li><a href="about.html#about-certificates">Certificates</a></li>
+        </ul>
+      </div>
+      <div class="bh__nav-dropdown">
+        <button class="bh__dropdown-btn" aria-haspopup="true" aria-expanded="false">Business Verticals</button>
+        <ul class="bh__dropdown-menu">
+          <li><a href="peb.html">Pre-Engineered Buildings (PEB)</a></li>
+          <li><a href="structures.html">Technological &amp; General Structure</a></li>
+          <li><a href="process-e.html">Process Equipments</a></li>
+          <li><a href="ducting.html">Piping &amp; Ducting Systems</a></li>
+          <li><a href="erection.html">Erection &amp; Commissioning</a></li>
+          <li><a href="agri-equipments.html">Agri Equipments</a></li>
+        </ul>
+      </div>
+      <a href="gallery.html">Gallery</a>
+      
+      <a href="career.html">Careers</a>
+      <a href="contact.html">Contact Us</a>
+
+      <div class="bh__nav-dropdown">
+        <button class="bh__dropdown-btn" aria-haspopup="true" aria-expanded="false">Download</button>
+        <ul class="bh__dropdown-menu">
+          <li><a href="https://www.canva.com/design/DAF1p7p0u_k/T7u4WCrOQzas8J_swdnF1w/view" target="_blank" rel="noopener noreferrer">Brochure</a></li>
+        </ul>
+      </div>
+    </nav>
+    <button class="bh__header-cta" data-open-modal>Get Quote</button>
+    <button id="bh__mobile-menu-button" class="bh__mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+  <nav id="bh__mobile-nav" class="bh__mobile-nav bh__hidden" aria-label="Mobile navigation">
+      <div class="bh__mobile-nav-item">
+        <button class="bh__mobile-nav-parent" data-mobile-toggle>
+          About Us <span class="bh__mobile-nav-chevron">▾</span>
+        </button>
+        <div class="bh__mobile-submenu">
+          <a href="index.html#about-why-balaji">Why Balaji</a>
+          <a href="index.html#about-philosophy">Corporate Philosophy</a>
+          <a href="index.html#core-principals">Core Values</a>
+          <a href="index.html#about-management">Leadership Message</a>
+          <a href="index.html#clients-section">Our Clients</a>
+        </div>
+      </div>
+
+      <a href="about.html">Infrastructure</a>
+
+      <div class="bh__mobile-nav-item">
+        <button class="bh__mobile-nav-parent" data-mobile-toggle>
+          Business Verticals <span class="bh__mobile-nav-chevron">▾</span>
+        </button>
+        <div class="bh__mobile-submenu">
+          <a href="peb.html">Pre-Engineered Buildings (PEB)</a>
+          <a href="process-e.html">Process Equipments</a>
+          <a href="structures.html">Technological &amp; General Structure</a>
+          <a href="ducting.html">Piping &amp; Ducting Systems</a>
+          <a href="agri-equipments.html">Agri Equipments</a>
+          <a href="erection.html">Erection &amp; Commissioning</a>
+        </div>
+      </div>
+
+      <a href="gallery.html">Gallery</a>
+      <a href="career.html">Careers</a>
+      <a href="contact.html">Contact Us</a>
+
+      <div class="bh__mobile-nav-item">
+        <button class="bh__mobile-nav-parent" data-mobile-toggle>
+          Download <span class="bh__mobile-nav-chevron">▾</span>
+        </button>
+        <div class="bh__mobile-submenu">
+          <a href="https://www.canva.com/design/DAF1p7p0u_k/T7u4WCrOQzas8J_swdnF1w/view?utm_content=DAF1p7p0u_k&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6fdd1c008e" target="_blank" rel="noopener noreferrer">Brochure</a>
+        </div>
+      </div>
+
+      <div class="bh__mobile-nav-cta">
+        <button class="bh__header-cta" data-open-modal>Get Quote</button>
+      </div>
+    </nav>
+</header>
+
+<!-- ══ COMING SOON BODY ══ -->
+<section class="cs-page" aria-label="Coming Soon">
+  <!-- Orbiting rings -->
+  <div class="cs-orbit"></div>
+  <div class="cs-orbit"></div>
+  <div class="cs-orbit"></div>
+
+  <div class="cs-inner">
+    <!-- Agri icon -->
+    <div class="cs-icon-ring" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2a10 10 0 0 1 0 20"/>
+        <path d="M12 2C6.5 2 2 6.5 2 12"/>
+        <path d="M7 9c0 5 3 8 5 10"/>
+        <path d="M17 9c0 5-3 8-5 10"/>
+        <path d="M2 12h20"/>
+        <path d="M12 2v4M12 18v4"/>
+      </svg>
+    </div>
+
+    <!-- Badge -->
+    <div class="cs-badge">
+      <span class="cs-badge-dot"></span>
+      Agri Equipments · Business Vertical
+    </div>
+
+    <!-- Main title -->
+    <div class="cs-title-wrap" aria-label="Coming Soon">
+      <div class="cs-title" aria-hidden="true">
+        <div class="cs-word"><span>Coming</span></div>
+        <div class="cs-word"><span>Soon</span></div>
+      </div>
+      <div class="cs-title-fill" aria-hidden="true">
+        <div>Coming</div>
+        <div>Soon</div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="cs-divider"></div>
+
+    <!-- Subtitle -->
+    <!-- <p class="cs-sub">
+      We're working hard to bring you our complete Agri Equipments vertical. Precision-engineered agricultural solutions — silos, conveyors, dryers, and more — launching very soon.
+    </p> -->
+
+    <!-- Dots -->
+    <div class="cs-dots" aria-hidden="true">
+      <span class="cs-dot"></span>
+      <span class="cs-dot"></span>
+      <span class="cs-dot"></span>
+      <span class="cs-dot"></span>
+      <span class="cs-dot"></span>
+    </div>
+
+    <!-- Actions -->
+    <div class="cs-actions">
+      <button class="cs-btn-primary" data-open-modal>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.5 3 3.9 5.4 6.9 6.9l2.3-2.3c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V21c0 .6-.4 1-1 1C10.4 22 2 13.6 2 3c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1l-2 2z"/></svg>
+        Get Notified
+      </button>
+      <a class="cs-btn-secondary" href="index.html">
+        ← Back to Home
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+  <footer class="bh__footer-shell" id="bh__footer-shell">
+    <div class="bh__footer-wrap">
+
+      <!-- Top bar: brand | socials | spacer -->
+      <div class="bh__footer-top">
+
+        <a class="bh__footer-brand" href="./index.html" aria-label="Balaji Hitech home">
+          <span class="bh__footer-brand-name" id="bh__footer-brand-name">Balaji Hitech Pvt. Ltd.</span>
+        </a>
+
+        <div class="bh__socials" id="bh__footer-socials">
+          <a href="https://facebook.com/balajiassociates" class="bh__social-btn fb" target="_blank" aria-label="Facebook" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg>
+          </a>
+          <a href="https://in.linkedin.com/in/balaji-hitech-private-limited-74a299376" class="bh__social-btn li" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1zM5.5 9.75h2.86V19H5.5V9.75zM10.25 9.75h2.74v1.26h.04c.38-.72 1.31-1.48 2.7-1.48 2.89 0 3.42 1.9 3.42 4.37V19h-2.86v-4.52c0-1.08-.02-2.46-1.5-2.46-1.5 0-1.73 1.18-1.73 2.39V19h-2.81V9.75z"/></svg>
+          </a>
+        </div>
+
+        <div class="bh__footer-top-spacer" aria-hidden="true"></div>
+      </div>
+
+      <!-- Navigation columns -->
+      <div class="bh__footer-nav">
+
+        <div class="bh__footer-col">
+          <a href="index.html" class="bh__heading-link bh__footer-heading-animate">About Us</a>
+          <ul>
+            <li><a href="index.html#about-why-balaji">Why Balaji</a></li>
+            <li><a href="index.html#about-philosophy">Corporate Philosophy</a></li>
+            <li><a href="index.html#core-principals">Core Values</a></li>
+            <li><a href="index.html#about-management">Management Team</a></li>
+            <li><a href="about.html" class="bh__heading-link bh__footer-heading-animate">Infrastructure</a></li>
+            <li><a href="about.html#about-certificates">Certificates</a></li>
+          </ul>
+        </div>
+
+         <div class="bh__footer-col">
+          <a href="index.html#business-areas" class="bh__heading-link bh__footer-heading-animate">Business Verticals</a>
+         <ul>
+            <li><a href="peb.html">Pre-Engineered Buildings (PEB)</a></li>
+             <li><a href="structures.html">Technological &amp; General Structure</a></li>
+            <li><a href="process-e.html">Process Equipments</a></li>
+            <li><a href="ducting.html">Piping &amp; Ducting Systems</a></li>
+            <li><a href="erection.html">Erection &amp; Commissioning</a></li>
+            <li><a href="agri-equipments.html">Agri Equipments</a></li>
+          </ul>
+        </div>
+
+        <div class="bh__footer-col bh__stack-links">
+          <a href="gallery.html" class="bh__heading-link bh__footer-heading-animate">Gallery</a>
+          <div class="bh__placeholder-lines" aria-hidden="true">
+            <span></span><span></span>
+          </div>
+          <a href="about.html#about-certificates" class="bh__heading-link bh__footer-heading-animate">IMS Certification</a>
+          <a href="career.html" class="bh__heading-link bh__footer-heading-animate">Careers</a>
+        </div>
+
+        <div class="bh__footer-col bh__stack-links">
+          <a href="#" class="bh__heading-link bh__footer-heading-animate">Download</a>
+          <ul>
+            <li>
+              <a href="https://www.canva.com/design/DAF1p7p0u_k/T7u4WCrOQzas8J_swdnF1w/view?utm_content=DAF1p7p0u_k&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6fdd1c008e" target="_blank" rel="noopener noreferrer">Brochure</a>
+            </li>
+          </ul>
+          <a href="index.html#clients-section" class="bh__heading-link bh__footer-heading-animate">Our Clients</a>
+        </div>
+
+        <div class="bh__footer-col">
+          <a href="contact.html" class="bh__heading-link bh__footer-heading-animate">Contact Us</a>
+          <div class="bh__contact-list">
+
+            <!-- Corporate Office -->
+            <div class="bh__contact-row">
+              <svg class="bh__map-icon-red" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/>
+              </svg>
+              <p>
+                <a class="bh__map-link" href="https://maps.app.goo.gl/VXeDtB8HF6Yr9fx58" target="_blank" rel="noopener noreferrer">
+                  Corporate Office: B-47, Sector 63, Noida 201301, U.P., India
+                </a>
+              </p>
+            </div>
+              <!--  https://maps.app.goo.gl/sSYPBEbdnC2oBCd46?g_st=ac -->
+            <!-- Works Address -->
+
+
+            <div class="bh__contact-row">
+              <svg class="bh__map-icon-red" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/>
+              </svg>
+               <p>
+                <a class="bh__map-link" href="https://maps.app.goo.gl/sSYPBEbdnC2oBCd46?g_st=ac" target="_blank" rel="noopener noreferrer">
+                  Works: Village Dariyapur Bujurg, NH-9, Gajraula, District Amroha – 244 235, U.P., India
+                </a>
+              </p>
+              <!-- <p>Works: Village Dariyapur Bujurg, NH-9, Gajraula, District Amroha – 244 235, U.P., India</p> -->
+            </div>
+
+            <!-- Phone -->
+            <div class="bh__contact-row">
+              <div class="bh__icon-phone-wrap" style="color:var(--bh__footer-accent);margin-top:2px;">
+                <span class="bh__wave"></span>
+                <span class="bh__wave"></span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.5 3 3.9 5.4 6.9 6.9l2.3-2.3c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V21c0 .6-.4 1-1 1C10.4 22 2 13.6 2 3c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1l-2 2z"/></svg>
+              </div>
+              <a href="tel:+919780803254">+91-9780803254 / 9650474041</a>
+            </div>
+
+            <!-- Email 1 -->
+            <div class="bh__contact-row">
+              <div class="bh__icon-email-wrap" style="color:var(--bh__footer-accent);margin-top:2px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <!-- envelope body -->
+                  <path d="M20 8H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2z"/>
+                  <!-- bottom fold lines -->
+                  <path d="M2 10l10 7 10-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <!-- animated flap -->
+                <svg class="bh__email-flap" width="18" height="9" viewBox="0 0 24 12" fill="currentColor" style="color:var(--bh__footer-accent);">
+                  <path d="M2 2h20L12 10z"/>
+                </svg>
+              </div>
+              <span>
+                <a href="mailto:info@balajihitech.in">info@balajihitech.in</a><br/>
+                <a href="mailto:marketing@balajihitech.in">marketing@balajihitech.in</a>
+              </span>
+            </div>
+
+</div>
+        </div>
+
+      </div><!-- /footer-nav -->
+
+      <div class="bh__footer-bottom">
+        <span class="bh__footer-copyright" id="bh__footer-copyright">
+          &copy; 2026 <strong>Balaji Hitech Pvt. Ltd.</strong> All rights reserved.
+        </span>
+        <span class="bh__built-by" id="bh__built-by">
+          Built by
+          <a class="bh__built-by-link" href="https://www.linkedin.com/in/piyush-sharma-836447124/" target="_blank" rel="noopener noreferrer" aria-label="Piyush Sharma on LinkedIn">P</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+<!-- ══ FLOATING VNAV ══ -->
+<nav class="bh__vnav" aria-label="Business Verticals Quick Nav">
+  <a class="bh__vnav-item" href="peb.html" data-label="Pre-Engineered Buildings (PEB)" aria-label="PEB">
+    <svg viewBox="0 0 24 24"><path d="M2 20h20M4 20V9.5L12 4l8 5.5V20"/><path d="M9 20v-5h6v5"/><path d="M4 12h3M17 12h3"/></svg>
+  </a>
+  <div class="bh__vnav-divider"></div>
+  <a class="bh__vnav-item" href="structures.html" data-label="Technological &amp; General Structure" aria-label="Structures">
+    <svg viewBox="0 0 24 24"><path d="M4 20V5M20 20V5M4 5h16M4 12h16"/><path d="M8 20V12M12 20V5M16 20V12"/></svg>
+  </a>
+  <div class="bh__vnav-divider"></div>
+  <a class="bh__vnav-item" href="process-e.html" data-label="Process Equipments" aria-label="Process">
+    <svg viewBox="0 0 24 24"><rect x="7" y="4" width="10" height="14" rx="5"/><path d="M12 4V2M12 18v2M7 9H5M19 9h-2"/><circle cx="12" cy="11" r="2.5"/></svg>
+  </a>
+  <div class="bh__vnav-divider"></div>
+  <a class="bh__vnav-item" href="ducting.html" data-label="Piping &amp; Ducting Systems" aria-label="Ducting">
+    <svg viewBox="0 0 24 24"><path d="M2 9h10"/><path d="M12 9a3 3 0 0 1 3 3v3"/><path d="M15 15h7"/><rect x="2" y="7" width="10" height="4" rx="2"/><rect x="15" y="13" width="7" height="4" rx="2"/></svg>
+  </a>
+  <div class="bh__vnav-divider"></div>
+  <a class="bh__vnav-item" href="erection.html" data-label="Erection &amp; Commissioning" aria-label="Erection">
+    <svg viewBox="0 0 24 24"><path d="M10 20V6"/><path d="M10 6h9"/><path d="M10 6 7 3"/><path d="M19 6v3"/><path d="M19 9l-2 2"/><path d="M17 11v5"/><path d="M6 20h8"/></svg>
+  </a>
+  <div class="bh__vnav-divider"></div>
+  <a class="bh__vnav-item active-page" href="agri-equipments.html" data-label="Agri Equipments" aria-label="Agri">
+    <svg viewBox="0 0 24 24"><circle cx="7" cy="17" r="3"/><circle cx="17" cy="18" r="2"/><path d="M4 17V9h7l3 5h3v3"/><path d="M7 9V6h4"/><path d="M14 14h2.5"/></svg>
+  </a>
+</nav>
+
+<!-- ══ FLOATING QUOTE BTN ══ -->
+<!-- <button class="bh__floating-quote-btn" data-open-modal aria-label="Get Quote">💬 Get Quote</button> -->
+
+<!-- ══ MODAL ══ -->
+<div id="bh__quote-modal" class="bh__modal-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="bh__modal-title">
+  <div class="bh__modal-container">
+    <div class="bh__modal-header">
+      <h2 id="bh__modal-title">Get Quote</h2>
+      <button class="bh__modal-close" aria-label="Close">&times;</button>
+    </div>
+    <p id="bh__quote-status" class="bh__form-status" role="alert"></p>
+    <form id="bh__quote-form" novalidate>
+      <div class="bh__form-group"><label for="bh__fn">Full Name *</label><input type="text" id="bh__fn" name="fullName" required /></div>
+      <div class="bh__form-group"><label for="bh__cn">Company Name</label><input type="text" id="bh__cn" name="companyName" /></div>
+      <div class="bh__form-group"><label for="bh__ph">Phone Number *</label><input type="tel" id="bh__ph" name="phone" required /></div>
+      <div class="bh__form-group"><label for="bh__em">Email Address *</label><input type="email" id="bh__em" name="email" required /></div>
+      <div class="bh__form-group"><label for="bh__requirement">Requirement *</label><textarea id="bh__requirement" name="requirement" rows="4" required placeholder="Describe your requirements…"></textarea></div>
+      <button type="submit" class="bh__btn-primary">Send Inquiry</button>
+    </form>
+    <div id="bh__quote-success" class="bh__quote-success-message"><div class="bh__success-check">✓</div><p>Query submitted — thank you!</p></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ── Floating particles ── */
+  (function spawnParticles(){
+    var page = document.querySelector('.cs-page');
+    if (!page) return;
+    var colors = ['rgba(34,197,94,', 'rgba(232,184,75,', 'rgba(47,123,255,', 'rgba(163,230,53,'];
+    for (var i = 0; i < 28; i++) {
+      var p = document.createElement('div');
+      p.className = 'cs-particle';
+      var size = (Math.random() * 5 + 2).toFixed(1);
+      var color = colors[Math.floor(Math.random() * colors.length)];
+      var opacity = (Math.random() * 0.5 + 0.2).toFixed(2);
+      var left = (Math.random() * 100).toFixed(1);
+      var delay = (Math.random() * 12).toFixed(1);
+      var dur = (Math.random() * 14 + 8).toFixed(1);
+      p.style.cssText =
+        'width:' + size + 'px;height:' + size + 'px;' +
+        'left:' + left + '%;bottom:-20px;' +
+        'background:' + color + opacity + ');' +
+        'animation-duration:' + dur + 's;' +
+        'animation-delay:' + delay + 's;';
+      page.appendChild(p);
+    }
+  })();
+
+  /* ── Header logo + name entrance ── */
+  function initHeader(){
+    var logo = document.getElementById('bh__brand-logo');
+    var nameEl = document.getElementById('bh__brand-name');
+    if (nameEl) {
+      var words = nameEl.textContent.trim().split(/\s+/);
+      nameEl.innerHTML = words.map(function(w){ return '<span>'+w+'</span>'; }).join(' ');
+      nameEl.querySelectorAll('span').forEach(function(s,i){ s.style.transitionDelay = (0.38+i*0.14)+'s'; });
+    }
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){
+      if (logo) logo.classList.add('bh__logo-in');
+      if (nameEl) nameEl.classList.add('bh__name-in');
+    }); });
+  }
+
+  /* ── Footer headings (re-animate on scroll) ── */
+  function initFooterHeadings(){
+    var hs = document.querySelectorAll('.bh__footer-heading-animate');
+    hs.forEach(function(h){
+      if (h.dataset.ready) return;
+      var words = h.textContent.trim().split(/\s+/);
+      h.innerHTML = words.map(function(w){ return '<span>'+w+'</span>'; }).join(' ');
+      h.querySelectorAll('span').forEach(function(s){
+        s.style.cssText = 'opacity:0;transform:translateY(10px);display:inline-block;transition:opacity .55s ease,transform .55s ease;';
+      });
+      h.dataset.ready = '1';
+    });
+    if (!('IntersectionObserver' in window)) {
+      hs.forEach(function(h){ h.querySelectorAll('span').forEach(function(s){ s.style.opacity='1'; s.style.transform='translateY(0)'; }); });
+      return;
+    }
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var spans = entry.target.querySelectorAll('span');
+        if (entry.isIntersecting) {
+          spans.forEach(function(s,i){ setTimeout(function(){ s.style.opacity='1'; s.style.transform='translateY(0)'; }, i*130); });
+        } else {
+          spans.forEach(function(s){ s.style.opacity='0'; s.style.transform='translateY(10px)'; });
+        }
+      });
+    }, { threshold:.35 });
+    hs.forEach(function(h){ obs.observe(h); });
+
+    /* Brand + copyright */
+    var bObs = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('bh__fb-in'); else e.target.classList.remove('bh__fb-in'); }); }, {threshold:0});
+    document.querySelectorAll('#bh__footer-brand-logo,#bh__footer-brand-name').forEach(function(el){ bObs.observe(el); });
+    var cObs = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('bh__cb-in'); else e.target.classList.remove('bh__cb-in'); }); }, {threshold:0});
+    document.querySelectorAll('#bh__footer-copyright,#bh__built-by').forEach(function(el){ cObs.observe(el); });
+  }
+
+  /* ── Footer socials ── */
+  function initFooterSocials(){
+    var shell = document.getElementById('bh__footer-shell');
+    if (!shell) return;
+    var obs = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ shell.classList.add('bh__animate-footer'); obs.unobserve(shell); } }); }, {threshold:.1});
+    obs.observe(shell);
+  }
+
+  /* ── Mobile menu ── */
+  function initMobileMenu(){
+    var btn = document.getElementById('bh__mobile-menu-button');
+    var nav = document.getElementById('bh__mobile-nav');
+    if (!btn||!nav) return;
+    btn.addEventListener('click', function(){ nav.classList.toggle('bh__hidden'); });
+  }
+
+  /* ── Dropdowns ── */
+  function initDropdowns(){
+    var wrappers = document.querySelectorAll('.bh__nav-dropdown');
+    var timer;
+    wrappers.forEach(function(w){
+      var menu=w.querySelector('.bh__dropdown-menu');
+      var btn=w.querySelector('.bh__dropdown-btn');
+      if(!menu||!btn)return;
+      function closeOthers(){ wrappers.forEach(function(x){ if(x===w)return; var b=x.querySelector('.bh__dropdown-btn'); x.classList.remove('bh__open'); if(b)b.setAttribute('aria-expanded','false'); }); }
+      function show(){ clearTimeout(timer); closeOthers(); w.classList.add('bh__open'); btn.setAttribute('aria-expanded','true'); }
+      function hide(){ timer=setTimeout(function(){ w.classList.remove('bh__open'); btn.setAttribute('aria-expanded','false'); },200); }
+      w.addEventListener('mouseenter',show); w.addEventListener('mouseleave',hide);
+      menu.addEventListener('mouseenter',function(){ clearTimeout(timer); }); menu.addEventListener('mouseleave',hide);
+      btn.addEventListener('click',function(e){ if(btn.tagName==='A')return; e.preventDefault(); w.classList.contains('bh__open')?hide():show(); });
+    });
+    document.addEventListener('click',function(e){ if(!e.target.closest('.bh__nav-dropdown')){ wrappers.forEach(function(w){ w.classList.remove('bh__open'); var b=w.querySelector('.bh__dropdown-btn'); if(b)b.setAttribute('aria-expanded','false'); }); } });
+  }
+
+  /* ── Mobile accordion ── */
+  function initMobileAccordion(){
+    document.querySelectorAll('[data-mobile-toggle]').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var item=btn.closest('.bh__mobile-nav-item'); if(!item)return;
+        var isOpen=item.classList.contains('bh__open');
+        document.querySelectorAll('.bh__mobile-nav-item.bh__open').forEach(function(el){ el.classList.remove('bh__open'); });
+        if(!isOpen) item.classList.add('bh__open');
+      });
+    });
+  }
+
+  /* ── Modal ── */
+  function initModal(){
+    var modal=document.getElementById('bh__quote-modal');
+    var form=document.getElementById('bh__quote-form');
+    var successBox=document.getElementById('bh__quote-success');
+    var statusBox=document.getElementById('bh__quote-status');
+    var openBtns=document.querySelectorAll('[data-open-modal]');
+    var closeBtn=modal&&modal.querySelector('.bh__modal-close');
+    var submitBtn=form&&form.querySelector('button[type="submit"]');
+    if(!modal)return;
+    function setStatus(msg,ok){ if(statusBox){ statusBox.textContent=msg||''; statusBox.classList.toggle('bh__ok',!!ok); } }
+    function openModal(){ modal.classList.add('bh__open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; setStatus(''); var f=modal.querySelector('input,textarea'); if(f)f.focus(); }
+    function closeModal(){ modal.classList.remove('bh__open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; if(form)form.reset(); if(successBox)successBox.classList.remove('bh__visible'); if(form)form.style.display=''; if(submitBtn){ submitBtn.disabled=false; submitBtn.textContent='Send Inquiry'; } setStatus(''); }
+    openBtns.forEach(function(b){ if(b.dataset.bhModalReady==='true')return; b.addEventListener('click',function(e){ e.preventDefault(); openModal(); }); b.dataset.bhModalReady='true'; });
+    if(closeBtn) closeBtn.addEventListener('click',closeModal);
+    modal.addEventListener('click',function(e){ if(e.target===modal) closeModal(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&modal.classList.contains('bh__open')) closeModal(); });
+    if(form){
+      if(form.dataset.bhQuoteReady==='true')return;
+      form.addEventListener('submit',async function(e){
+        e.preventDefault();
+        var fd=new FormData(form);
+        var fullName=(fd.get('fullName')||'').trim(),phone=(fd.get('phone')||'').trim(),email=(fd.get('email')||'').trim(),requirement=(fd.get('requirement')||'').trim();
+        if(!fullName||!phone||!email||!requirement){ setStatus('Please fill in all required fields.'); return; }
+        if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ setStatus('Please enter a valid email.'); return; }
+        if(phone.replace(/\D/g,'').length<8){ setStatus('Please enter a valid phone number.'); return; }
+        try{
+          if(submitBtn){ submitBtn.disabled=true; submitBtn.textContent='Sending...'; } setStatus('');
+          var ep=form.getAttribute('data-endpoint')||window.BALAJI_QUOTE_ENDPOINT||'http://localhost:5000/api/quotes';
+          var res=await fetch(ep,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fullName,companyName:(fd.get('companyName')||'').trim(),phone,email,requirement})});
+          var r={};try{r=await res.json();}catch(_){}
+          if(!res.ok||!r.success) throw new Error(r.message||'Failed');
+          form.style.display='none'; setStatus('Submitted!',true); if(successBox) successBox.classList.add('bh__visible'); setTimeout(closeModal,2200);
+        }catch(err){ console.error(err); setStatus('Submit failed. Email sales@balajiprojects.co.in'); if(submitBtn){ submitBtn.disabled=false; submitBtn.textContent='Send Inquiry'; } }
+      });
+      form.dataset.bhQuoteReady='true';
+    }
+  }
+
+  /* ── Init ── */
+  document.addEventListener('DOMContentLoaded',function(){
+    initHeader();
+    initFooterHeadings();
+    initFooterSocials();
+    initMobileMenu();
+    initDropdowns();
+    initMobileAccordion();
+    initModal();
+  });
+})();
+  </script>
+  <script src="security.js"></script>
+  <script>BHGuard.init();</script>
+  <script id="bh__mobile-nav-close-inline">
+    (function () {
+      function initMobileNavClose() {
+        var nav = document.getElementById('bh__mobile-nav');
+        if (!nav || nav.dataset.closeReady === 'true') return;
+
+        nav.dataset.closeReady = 'true';
+
+        function closeMobileNav() {
+          nav.classList.add('bh__hidden');
+          nav.querySelectorAll('.bh__mobile-nav-item.bh__open').forEach(function (item) {
+            item.classList.remove('bh__open');
+          });
+        }
+
+        nav.addEventListener('click', function (event) {
+          if (event.target.closest('[data-mobile-toggle]')) return;
+          if (event.target.closest('a, [data-open-modal]')) {
+            closeMobileNav();
+          }
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMobileNavClose);
+      } else {
+        initMobileNavClose();
+      }
+    })();
+  </script>
+</body>
+</html>
