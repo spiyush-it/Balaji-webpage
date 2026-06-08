@@ -24,6 +24,12 @@ const BH_ADMIN_CONFIG = {
       password: "@ashish0512",
       role: "Developer",
       name: "Ashish Ram Sharma"
+    },
+    {
+      username: "salabh.varshney",
+      password: "@9650474041",
+      role: "CEO Balaji Hitech Pvt. Ltd.",
+      name: "Salabh Varshney"
     }
   ],
   sessionKey: "bh_admin_session",
