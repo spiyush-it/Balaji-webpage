@@ -26,7 +26,7 @@ const BH_ADMIN_CONFIG = {
       name: "Ashish Ram Sharma"
     },
     {
-      username: "salabh.varshney",
+      username: "shalabh.varshney",
       password: "@9650474041",
       role: "CEO Balaji Hitech Pvt. Ltd.",
       name: "Salabh Varshney"
